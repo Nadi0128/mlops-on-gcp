@@ -21,7 +21,7 @@ steps:
   - 'ARTIFACT_STORE_URI=$_ARTIFACT_STORE_URI'
   - 'CUSTOM_SERVICE_ACCOUNT=$_CUSTOM_SERVICE_ACCOUNT'
   - 'DATA_ROOT_URI=$_DATA_ROOT_URI'
-  - 'KUBEFLOW_TFX_IMAGE=gcr.io/$PROJECT_ID/$_TFX_IMAGE_NAME:$TAG_NAME'
+  - 'KUBEFLOW_TFX_IMAGE=gcr.io/$PROJECT_ID/tfx_pipeline:$TAG_NAME'
   - 'RUNTIME_VERSION=$_RUNTIME_VERSION'
   - 'PYTHON_VERSION=$_PYTHON_VERSION'
   - 'USE_KFP_SA=$_USE_KFP_SA'
@@ -29,7 +29,7 @@ steps:
   dir: $_PIPELINE_FOLDER
 
 # Push the image to Container Registry
-images: ['gcr.io/$PROJECT_ID/$_TFX_IMAGE_NAME:$TAG_NAME']
+images: ['gcr.io/$PROJECT_ID/tfx_pipeline:$TAG_NAME']
 
 options:
   logging: CLOUD_LOGGING_ONLY
